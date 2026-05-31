@@ -174,6 +174,3 @@ On every push to this branch, GitHub Actions will:
 KARTIK DADHICH G25AI1023
 
 Machine Learning Operations (MLOps) Assignment
-Tanmay Sarkar G25AI1050
-
-Machine Learning Operations (MLOps) Assignment
