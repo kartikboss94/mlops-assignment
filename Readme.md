@@ -1,19 +1,33 @@
-# Boston Housing Price Prediction
+Boston Housing Price Prediction using Machine Learning
 
-## Overview
+Overview
 
-This project implements a machine learning workflow for predicting house prices using the Boston Housing dataset. The workflow includes data loading, preprocessing, model training, evaluation, and model persistence.
+This project implements an end-to-end machine learning workflow for predicting house prices using the Boston Housing dataset. The project demonstrates data loading, preprocessing, model training, evaluation, model persistence, and automated experimentation using multiple regression models.
 
-## Models
+Dataset
 
-* Decision Tree Regressor (`train.py`)
-* Kernel Ridge Regressor (`train2.py`)
+The Boston Housing dataset was originally available through Scikit-learn but has since been deprecated. The dataset is loaded directly from the original source and contains housing-related features such as crime rate, average number of rooms, property tax rate, and other socio-economic indicators.
 
-Reusable functions for preprocessing, training, prediction, and evaluation are defined in `misc.py`.
+Target Variable
 
-## Project Structure
+MEDV: Median value of owner-occupied homes (in $1000s)
+Features
 
-```text
+CRIM
+ZN
+INDUS
+CHAS
+NOX
+RM
+AGE
+DIS
+RAD
+TAX
+PTRATIO
+B
+LSTAT
+Project Structure
+
 Boston_Housing/
 │
 ├── data_loader.py
@@ -21,56 +35,88 @@ Boston_Housing/
 ├── train.py
 ├── train2.py
 ├── requirements.txt
-└── README.md
-```
+├── README.md
+│
+├── saved_models/
+│
+├── results/
+│
+└── .github/
+    └── workflows/
+        └── ml_pipeline.yml
+Models Implemented
 
-## Installation
+main Branch
 
-Create and activate a Conda environment:
+Readme.md
+dtree Branch
 
-```bash
+Decision Tree Regressor
+kernelridge Branch
+
+Decision Tree Regressor
+Kernel Ridge Regressor
+Installation
+
+Clone the Repository
+
+git clone <repository-url>
+cd Boston_Housing
+Create a Virtual Environment (Optional)
+
+Using Conda:
+
 conda create -n digit python=3.11
 conda activate digit
-```
+Install Dependencies
 
-Install dependencies:
-
-```bash
 pip install -r requirements.txt
-```
+Running the Project
 
-## Running the Code
+Train and Evaluate Decision Tree Model
 
-Run the Decision Tree model:
-
-```bash
 python train.py
-```
+Example Output:
 
-Run the Kernel Ridge model:
+Average MSE Score: 10.4161
+Train and Evaluate Kernel Ridge Model
 
-```bash
 python train2.py
-```
+Example Output:
 
-## Evaluation Metrics
+Average MSE Score: 20.2850
+Saved Models
 
-The models are evaluated using:
+Trained models are automatically stored inside:
 
-* MAE
-* MSE
-* RMSE
-* R² Score
+saved_models/
+Example:
 
-## GitHub Actions
+saved_models/
+├── Decision Tree Regressor.pkl
+├── Kernel Ridge Regressor.pkl
+└── scaler.pkl
+Evaluation Metrics
 
-A GitHub Actions workflow is configured for the `kernelridge` branch. On every push, it automatically:
+The following metrics are reported:
 
-* Installs dependencies
-* Runs `train.py`
-* Runs `train2.py`
-* Displays model performance
+Mean Absolute Error (MAE)
+Mean Squared Error (MSE)
+Root Mean Squared Error (RMSE)
+R² Score
+GitHub Actions
 
-## Author
+A GitHub Actions workflow is configured for the kernelridge branch.
 
-Kartik Dadhich G25AI1023
+On every push to this branch, GitHub Actions will:
+
+Check out the repository.
+Install project dependencies.
+Run train.py.
+Run train2.py.
+Display model performance in the workflow logs.
+Scribe
+
+KARTIK DADHICH G25AI1023
+
+Machine Learning Operations (MLOps) Assignment
