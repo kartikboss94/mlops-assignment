@@ -169,7 +169,6 @@ On every push to this branch, GitHub Actions will:
 5. Display model performance in the workflow logs.
 
 ---
-
 ## Scribe
 KARTIK DADHICH G25AI1023
 
