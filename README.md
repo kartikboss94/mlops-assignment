@@ -109,7 +109,6 @@ Example Output:
 ```text
 Average MSE Score: 10.4161
 ```
-
 ---
 
 ### Train and Evaluate Kernel Ridge Model
